@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:grey ;
+}
+
+header{
+    background-color: white;
+    padding: 20px auto;
+    text-align: center;
+    position: relative;
+}
+.score-board{
+    padding: 20px;
+    text-align: center;
+    border: 3px solid white;
+    width:50%;
+    margin: 10% 25%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+
+
+
+
+}
+
+.score_div{
+    background-color: red;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    
+
+
+
+}
+.user
+{
+    background-color: red;
+    position: absolute;
+    right:110px;
+}
+.comp{
+    background-color: red;
+    position: absolute;
+    left:110px;
+}
+.score{
+    font-size: 80px;
+    color: white;
+}
+.input{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    
+}
+.rock{
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.paper{
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.scissor{
+    padding: 10px;
+        border: 2px solid white;
+        border-radius: 50%;
+    
+}
+.result{
+    
+    text-align: center;
+    font-size: 40px;
+    padding: 10px 10px;
+    justify-content: center;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    margin: 10px 10px;
+    padding: 10px 10px;
+}
