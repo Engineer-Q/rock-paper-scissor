@@ -1,66 +1,71 @@
-let playerScore = 0;
-let compScore = 0;
-const arrOfChoices = ["rock", "paper", "scissor"];
+let playerScore = 0
+let computerScore = 0;
 
-
-function getComputerChoice (){
-  const arrOfChoices = ["rock", "paper", "scissor"];
-  const randomNum = Math.floor(Math.random()*arrOfChoices.length);
-  const compChoice = arrOfChoices[randomNum];
-  return compChoice;
+function getComputerChoice () {
+    const choices = ['rock', 'paper', 'scissors']
+    const randomChoice = Math.floor(Math.random()* choices.length)
+    return choices[randomChoice];
 }
 
-function playRound(playerSelection, computerSelection){ 
-  if(playerSelection==='rock' && computerSelection==='rock'){
-    return 'you tied! you both poicked rock'
-  }else if (playerSelection=== 'scissor' && computerSelection==='scissor'){
-    return 'you tied! you both picked scissor'
-  }else if (playerSelection=== 'paper' && computerSelection==='paper'){
-    return 'you tied! you both picked paper'
-  }else if (playerSelection==='scissor' && computerSelection==='rock'){
-    compScore++;
-    return 'you lost! rock crushes scissor'
-     
-  }else if (playerSelection==='scissor' && computerSelection==='paper'){
-    playerScore++;
-    return 'you won! scissor cuts paper'
-     
-  }else if (playerSelection==='rock' && computerSelection==='paper'){
-    compScore++;
-    return 'you lost! paper covers rock'
+function playRound(playerSelection, computerSelection){
     
-  }else if (playerSelection==='rock' && computerSelection==='scissor'){
-    playerScore++;
-    return ' you won! rock crushes scissor'
-    
-  }else if (playerSelection==='paper' && computerSelection === 'scissor'){
-    compScore++;
-    return 'you lost scissor cuts paper'
-    
-  }else if (playerSelection==='paper' && computerSelection==='rock'){
-    playerScore++;
-    return 'you won! paper cover rock' 
-  }
+    if(playerSelection === 'rock' && computerSelection === 'rock'){
+        return 'its a tie. you both picked rock'
+    } else if (playerSelection === 'paper' && computerSelection === 'paper'){
+        return 'its a tie. you both picked paper'
+    }else if (playerSelection === 'scissors' && computerSelection === 'scissors'){
+        return 'its a tie. you both picked scissors'
+    }else if(playerSelection === 'rock' && computerSelection === 'paper'){
+        computerScore++
+       return 'you lose! paper covers rock' 
+       
+    }else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+        playerScore++
+        return 'you win! rock crushes scissors' 
+          
+    }else if (playerSelection === 'paper' && computerSelection === 'rock'){
+        playerScore++ 
+        return 'you win! paper covers rock' 
+         
+    }else if (playerSelection === 'paper' && computerSelection === 'scissors'){     
+        computerScore++
+        return 'you lose! scissors cut paper' 
+           
+    }else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+        computerScore++
+        return 'you lose! rock crushes scissors' 
+          
+    }else if (playerSelection === 'scissors' && computerSelection === 'paper'){     
+        playerScore++
+        return 'you win! scissors cut paper'
+         
+    } 
+       
 }
-playRound()
 
-function game(){
-  
-  for(let i = 0; i<5; i++){
-    const playerSelection = prompt('type your choice', 'rock, paper, scissor').toLowerCase();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection,computerSelection)
-  }
-
-  if (playerScore>compScore){
-    return 'you beat the computer'
-  } else if (playerScore<compScore){
-    return 'you got beat by a computer'
-  }else{
-    return 'tied'
-  }
+function game() {
+    
+    for(let i = 0; i < 5; i++){
+        const playerSelection = prompt('rock paper scissors', 'type your choice').toLowerCase();
+        console.log(playerSelection)
+        const computerSelection = getComputerChoice();
+        console.log(computerSelection)
+        console.log(playRound(playerSelection,computerSelection))
+        
+        console.log(playerScore)
+        console.log(computerScore)     
+    }
+    function final() {
+    
+        if (playerScore>computerScore){
+            console.log('you beat the computer') 
+           } else if (playerScore<computerScore){
+            console.log('you got beat by a computer') 
+           }else{
+            console.log('tied') 
+           }
+    }
+    final()
+    
 }
-console.log(game());
-
-
-
+game()
